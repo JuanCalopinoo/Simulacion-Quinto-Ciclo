@@ -1,0 +1,30 @@
+# Entornos virtuales (nunca se suben al repositorio)
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editores y sistema
+.vscode/
+.idea/
+*.swp
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Secretos y configuración local
+secrets.toml
+*.local
+
+# Resultados o salidas generadas que no forman parte del código fuente
+resultados/
+salidas/

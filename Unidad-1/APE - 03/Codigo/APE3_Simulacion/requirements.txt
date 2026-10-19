@@ -1,0 +1,6 @@
+# Dependencias directas del proyecto.
+# Versiones verificadas con Python 3.14 en un entorno virtual limpio.
+simpy==4.1.2
+numpy==2.5.4
+matplotlib==3.11.2
+streamlit==1.66.0
