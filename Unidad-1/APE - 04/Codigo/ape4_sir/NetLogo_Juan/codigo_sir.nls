@@ -1,0 +1,61 @@
+
+globals [
+  beta
+  gamma-recuperacion
+  poblacion-total
+  infectados-iniciales
+  tiempo-maximo
+]
+
+turtles-own [
+  estado
+]
+
+to configurar-parametros
+  set beta 0.30
+  set gamma-recuperacion 0.10
+  set poblacion-total 100
+  set infectados-iniciales 5
+  set tiempo-maximo 100
+end
+
+to setup
+  clear-all
+  configurar-parametros
+
+  create-turtles poblacion-total [
+    setxy random-xcor random-ycor
+    set estado "S"
+    set color blue
+    set shape "person"
+    set size 1.5
+  ]
+
+  ask n-of infectados-iniciales turtles [
+    set estado "I"
+    set color red
+  ]
+
+  reset-ticks
+end
+
+to go
+  if ticks >= tiempo-maximo [ stop ]
+
+  ; Aquí incorporaremos las reglas de
+  ; contagio y recuperación.
+
+  tick
+end
+
+to-report susceptibles
+  report count turtles with [estado = "S"]
+end
+
+to-report infectados
+  report count turtles with [estado = "I"]
+end
+
+to-report recuperados
+  report count turtles with [estado = "R"]
+end
